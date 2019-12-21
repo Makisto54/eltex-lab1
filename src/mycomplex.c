@@ -1,38 +1,36 @@
 #include "mycomplex.h"
 
-struct mycomplex* add(struct mycomplex* a, struct mycomplex* b)
+void add(struct mycomplex* a, struct mycomplex* b, struct mycomplex* c)
 {
-    struct mycomplex* c = malloc(sizeof(struct mycomplex));
     c->real = a->real + b->real;
     c->img = a->img + b->img;
-    return c;
 }
 
-struct mycomplex* sub(struct mycomplex* a, struct mycomplex* b)
+void sub(struct mycomplex* a, struct mycomplex* b, struct mycomplex* c)
 {
-    struct mycomplex* c = malloc(sizeof(struct mycomplex));
     c->real = a->real - b->real;
     c->img = a->img - b->img;
-    return c;
 }
 
-struct mycomplex* mul(struct mycomplex* a, struct mycomplex* b)
+void mul(struct mycomplex* a, struct mycomplex* b, struct mycomplex* c)
 {
-    struct mycomplex* c = malloc(sizeof(struct mycomplex));
     c->real = a->real * b->real - a->img * b->img;
     c->img = a->real * b->img + a->img * b->real;
-    return c;
 }
 
-struct mycomplex* divide(struct mycomplex* a, struct mycomplex* b)
+void divide(struct mycomplex* a, struct mycomplex* b, struct mycomplex* c)
 {
-    struct mycomplex* c = malloc(sizeof(struct mycomplex));
     c->real = (a->real * b->real + a->img * b->img) / (b->real * b->real + b->img * b->img);
     c->img = (b->real * a->img - b->img * a->real) / (b->real * b->real + b->img * b->img);
-    return c;
 }
 
-void print(struct mycomplex* a)
+void input(struct mycomplex* a, struct mycomplex* b)
 {
-    printf("(%lf, %lf)\n", a->real, a->img);
+    printf("Input A and B\n");
+    scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);	
+}
+
+void print(struct mycomplex* c)
+{
+	printf("(%lf, %lf)\n", c->real, c->img);
 }

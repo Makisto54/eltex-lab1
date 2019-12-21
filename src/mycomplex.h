@@ -10,10 +10,11 @@ struct mycomplex
     double img;
 };
 
-struct mycomplex* add(struct mycomplex *, struct mycomplex *);
-struct mycomplex* sub(struct mycomplex *, struct mycomplex *);
-struct mycomplex* mul(struct mycomplex *, struct mycomplex *);
-struct mycomplex* divide(struct mycomplex *, struct mycomplex *);
-void print(struct mycomplex*);
+void add(struct mycomplex *, struct mycomplex *, struct mycomplex *);
+void sub(struct mycomplex *, struct mycomplex *, struct mycomplex *);
+void mul(struct mycomplex *, struct mycomplex *, struct mycomplex *);
+void divide(struct mycomplex *, struct mycomplex *, struct mycomplex *);
+void input(struct mycomplex *, struct mycomplex *);
+void print(struct mycomplex *);
 
 #endif

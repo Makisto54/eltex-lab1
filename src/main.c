@@ -4,6 +4,7 @@ int main(int argc, char* argv[])
 {
     struct mycomplex* a = malloc(sizeof(struct mycomplex));
     struct mycomplex* b = malloc(sizeof(struct mycomplex));
+    struct mycomplex* c = malloc(sizeof(struct mycomplex));
     system("clear");
     printf("1 - Add\n");
     printf("2 - Sub\n");
@@ -18,36 +19,37 @@ int main(int argc, char* argv[])
         switch(ch)
         {
             case 49:
-                printf("Input A and B\n");
-                scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
+            	input(a, b);
+                add(a, b, c);
                 printf("A + B = ");
-                print(add(a, b));
+                print(c);
                 printf("Choose the operation:\n");
                 break;
             case 50:
-                printf("Input A and B\n");
-                scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
+                input(a, b);
+                sub(a, b, c);
                 printf("A - B = ");
-                print(sub(a, b));
+                print(c);
                 printf("Choose the operation:\n");
                 break;
             case 51:
-                printf("Input A and B\n");
-                scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
+                input(a, b);
+                mul(a, b, c);
                 printf("A * B = ");
-                print(mul(a, b));
+                print(c);
                 printf("Choose the operation:\n");
                 break;
             case 52:
-                printf("Input A and B\n");
-                scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
+                input(a, b);
                 if((b->real * b->real + b->img * b->img) == 0)
                 {
                     printf("Wrong numbers!\n");
+                    printf("Choose the operation:\n");
                     break;
                 }
+                divide(a, b, c);
                 printf("A / B = ");
-                print(divide(a, b));
+                print(c);
                 printf("Choose the operation:\n");
                 break;
             default:
