@@ -1,9 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "mycomplex.h"
 
 int main(int argc, char* argv[])
 {
     struct mycomplex* a = malloc(sizeof(struct mycomplex));
     struct mycomplex* b = malloc(sizeof(struct mycomplex));
+    struct mycomplex* c = malloc(sizeof(struct mycomplex));
     system("clear");
     printf("1 - Add\n");
     printf("2 - Sub\n");
@@ -20,22 +23,25 @@ int main(int argc, char* argv[])
             case 49:
                 printf("Input A and B\n");
                 scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
-                printf("A + B = ");
-                print(add(a, b));
+                printf("A + B = "); 
+                add(a, b, c);
+                printf("(%lf, %lf)\n", c->real, c->img);
                 printf("Choose the operation:\n");
                 break;
             case 50:
                 printf("Input A and B\n");
                 scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
                 printf("A - B = ");
-                print(sub(a, b));
+                sub(a, b, c);
+                printf("(%lf, %lf)\n", c->real, c->img);
                 printf("Choose the operation:\n");
                 break;
             case 51:
                 printf("Input A and B\n");
                 scanf("%lf %lf %lf %lf", &a->real, &a->img, &b->real, &b->img);
                 printf("A * B = ");
-                print(mul(a, b));
+                mul(a, b, c);
+                printf("(%lf, %lf)\n", c->real, c->img);
                 printf("Choose the operation:\n");
                 break;
             case 52:
@@ -47,7 +53,8 @@ int main(int argc, char* argv[])
                     break;
                 }
                 printf("A / B = ");
-                print(divide(a, b));
+                divide(a, b, c);
+                printf("(%lf, %lf)\n", c->real, c->img);
                 printf("Choose the operation:\n");
                 break;
             default:
