@@ -50,6 +50,7 @@ int main(int argc, char* argv[])
                 if((b->real * b->real + b->img * b->img) == 0)
                 {
                     printf("Wrong numbers!\n");
+                    printf("Choose the operation:\n");
                     break;
                 }
                 printf("A / B = ");
