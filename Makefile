@@ -2,7 +2,7 @@ GCC = gcc -Wall -Werror
 
 .PHONY: clean 
 
-all: build lib libs default
+all: build libs default
 
 libs: libs/libadd.so libs/libsub.so libs/libdiv.so libs/libmul.so
 
@@ -37,8 +37,6 @@ build/div.o: src/div.c src/mycomplex.h
 
 build:
 	mkdir build
-
-lib:
 	mkdir libs
 
 clean: 
